@@ -6,6 +6,22 @@
       "title": "Language",
       "portuguese": "Portuguese",
       "english": "English"
+    },
+    "loading": {
+      "loading": "Loading",
+      "updating": "Updating"
     }
+  },
+  "table": {
+    "id": "ID",
+    "name": "Name",
+    "owner": "Owner",
+    "end_of_contract": "End of Contract"
+  },
+  "dialog": {
+    "title": "Add Band",
+    "name": "Name",
+    "owner": "Owner",
+    "save": "Save"
   }
 }

@@ -6,6 +6,22 @@
       "title": "Idioma",
       "portuguese": "Português",
       "english": "Inglês"
+    },
+    "loading": {
+      "loading": "Carregando",
+      "updating": "Atualizando"
     }
+  },
+  "table": {
+    "id": "ID",
+    "name": "Nome",
+    "owner": "Dono",
+    "end_of_contract": "Final do Contrato"
+  },
+  "dialog": {
+    "title": "Adicionar Banda",
+    "name": "Nome",
+    "owner": "Dono",
+    "save": "Salvar"
   }
 }

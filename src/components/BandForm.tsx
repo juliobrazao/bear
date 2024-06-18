@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useCreateBand } from "../hooks/useCreateBand";
 import { useDialogStore } from "../store/dialog";
 import { Band } from "../services/BandService";
+import { useTranslation } from "react-i18next";
 
 const BandFormSchema = z.object({
   name: z.string().min(1).max(30),
@@ -11,6 +12,7 @@ const BandFormSchema = z.object({
 });
 
 export default function BandForm() {
+  const { t } = useTranslation();
   const {
     handleSubmit,
     register,
@@ -36,7 +38,7 @@ export default function BandForm() {
         <form onSubmit={handleSubmit(handleSubmitForm)}>
           <div className="mb-3">
             <label htmlFor="name" className="form-label">
-              Name
+              {t("dialog.name")}
             </label>
             <input
               type="text"
@@ -53,7 +55,7 @@ export default function BandForm() {
 
           <div className="mb-3">
             <label htmlFor="owner" className="form-label">
-              Owner
+              {t("dialog.owner")}
             </label>
             <input
               type="text"
@@ -70,7 +72,7 @@ export default function BandForm() {
 
           <div className="mb-3">
             <button type="submit" className="btn btn-primary w-100">
-              Save
+              {t("dialog.save")}
             </button>
           </div>
         </form>

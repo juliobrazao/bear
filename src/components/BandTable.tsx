@@ -2,8 +2,10 @@ import { Spinner } from "react-bootstrap";
 import { useReadBands } from "../hooks/useReadBands";
 import { Band } from "../services/BandService";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function BandTable() {
+  const { t } = useTranslation();
   const { data: bands, isLoading, isRefetching, refetch } = useReadBands();
 
   useEffect(() => {
@@ -14,7 +16,7 @@ export default function BandTable() {
     return (
       <>
         <Spinner size="sm" />
-        &nbsp; Loading
+        &nbsp; {t("main.loading.loading")}
       </>
     );
 
@@ -22,7 +24,7 @@ export default function BandTable() {
     return (
       <>
         <Spinner size="sm" />
-        &nbsp; Updating
+        &nbsp; {t("main.loading.updating")}
       </>
     );
 
@@ -32,10 +34,10 @@ export default function BandTable() {
         <table className="table table-striped">
           <thead>
             <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Owner</th>
-              <th>End of Contract</th>
+              <th>{t("table.id")}</th>
+              <th>{t("table.name")}</th>
+              <th>{t("table.owner")}</th>
+              <th>{t("table.end_of_contract")}</th>
             </tr>
           </thead>
           <tbody>
