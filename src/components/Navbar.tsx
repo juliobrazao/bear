@@ -1,11 +1,13 @@
 import { Cassette, PlusCircle, Translate } from "react-bootstrap-icons";
 import { useDialogStore } from "../store/dialog";
+import { useTranslation } from "react-i18next";
 
 interface NavbarProps {
   title?: string;
 }
 
 export default function Navbar({ title = "Generic" }: NavbarProps) {
+  const { t, i18n } = useTranslation();
   const { show, setShow } = useDialogStore();
 
   return (
@@ -15,7 +17,7 @@ export default function Navbar({ title = "Generic" }: NavbarProps) {
           <span className="navbar-brand">
             <Cassette color="white" size={25} />
             &nbsp;&nbsp;
-            {title}
+            {t("main.title")}
           </span>
           <button
             className="navbar-toggler d-lg-none"
@@ -39,7 +41,7 @@ export default function Navbar({ title = "Generic" }: NavbarProps) {
                     onClick={() => setShow(!show)}
                   >
                     <PlusCircle size={16} />
-                    &nbsp; Add Band
+                    &nbsp; {t("main.add_band")}
                   </span>
                 </li>
                 <li className="nav-item dropdown">
@@ -52,11 +54,21 @@ export default function Navbar({ title = "Generic" }: NavbarProps) {
                     style={{ cursor: "pointer" }}
                   >
                     <Translate size={16} />
-                    &nbsp; Language
+                    &nbsp; {t("main.language.title")}
                   </span>
                   <div className="dropdown-menu" aria-labelledby="dropdownId">
-                    <span className="dropdown-item">Portuguese</span>
-                    <span className="dropdown-item">English</span>
+                    <span
+                      className="dropdown-item"
+                      onClick={() => i18n.changeLanguage("pt")}
+                    >
+                      {t("main.language.portuguese")}
+                    </span>
+                    <span
+                      className="dropdown-item"
+                      onClick={() => i18n.changeLanguage("en")}
+                    >
+                      {t("main.language.english")}
+                    </span>
                   </div>
                 </li>
               </ul>

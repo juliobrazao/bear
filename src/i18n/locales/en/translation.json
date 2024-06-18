@@ -1,0 +1,11 @@
+{
+  "main": {
+    "title": "Band Storage",
+    "add_band": "Add Band",
+    "language": {
+      "title": "Language",
+      "portuguese": "Portuguese",
+      "english": "English"
+    }
+  }
+}

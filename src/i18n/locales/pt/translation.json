@@ -1,0 +1,11 @@
+{
+  "main": {
+    "title": "Repositório de Bandas",
+    "add_band": "Adicionar Banda",
+    "language": {
+      "title": "Idioma",
+      "portuguese": "Português",
+      "english": "Inglês"
+    }
+  }
+}
