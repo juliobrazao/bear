@@ -4,6 +4,7 @@ import Container from "./components/Container";
 import BandForm from "./components/BandForm";
 import BandTable from "./components/BandTable";
 import { useTranslation } from "react-i18next";
+import DateRangePicker from "./components/DateRangePicker";
 
 export default function App() {
   const { t } = useTranslation();
@@ -12,7 +13,8 @@ export default function App() {
     <>
       <Navbar title={t("main")} />
       <Container>
-        <BandTable />
+        {/* <BandTable /> */}
+        <DateRangePicker />
       </Container>
       <Dialog title="Add Band" content={<BandForm />} />
     </>

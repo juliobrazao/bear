@@ -23,5 +23,22 @@
     "name": "Name",
     "owner": "Owner",
     "save": "Save"
+  },
+  "utils": {
+    "dateformat": "MM/DD/YYYY",
+    "months": {
+      "january": "January",
+      "february": "February",
+      "march": "March",
+      "april": "April",
+      "may": "May",
+      "june": "June",
+      "july": "July",
+      "august": "August",
+      "september": "September",
+      "october": "October",
+      "november": "November",
+      "december": "December"
+    }
   }
 }
