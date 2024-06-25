@@ -27,6 +27,12 @@ export default class BandService {
     return axios.get(`${ENDPOINT}/bands`).then((response) => response.data);
   }
 
+  static async updateBand(bandId: string, band: Partial<Band>) {
+    return axios
+      .patch(`${ENDPOINT}/bands/${bandId}`, band)
+      .then((response) => response.data);
+  }
+
   static async deleteBand(bandId: string) {
     return axios
       .delete(`${ENDPOINT}/bands/${bandId}`)
