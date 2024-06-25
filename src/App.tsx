@@ -13,8 +13,8 @@ export default function App() {
     <>
       <Navbar title={t("main")} />
       <Container>
-        {/* <BandTable /> */}
-        <DateRangePicker />
+        <BandTable />
+        {/* <DateRangePicker /> */}
       </Container>
       <Dialog title="Add Band" content={<BandForm />} />
     </>

@@ -5,6 +5,8 @@ import { useCreateBand } from "../hooks/useCreateBand";
 import { useDialogStore } from "../store/dialog";
 import { Band } from "../services/BandService";
 import { useTranslation } from "react-i18next";
+import { useTransition } from "react";
+import { Spinner } from "react-bootstrap";
 
 const BandFormSchema = z.object({
   name: z.string().min(1).max(30),
@@ -12,6 +14,7 @@ const BandFormSchema = z.object({
 });
 
 export default function BandForm() {
+  const [isPending, startTransition] = useTransition();
   const { t } = useTranslation();
   const {
     handleSubmit,
@@ -31,6 +34,13 @@ export default function BandForm() {
     reset();
     setShow(!show);
   };
+
+  if (isPending)
+    return (
+      <>
+        <Spinner size="sm" />
+      </>
+    );
 
   return (
     <>
